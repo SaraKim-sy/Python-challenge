@@ -12,17 +12,28 @@ with open(file_path) as file:
     csvreader = csv.reader(file)
     next(csvreader, None)
     first_row = next(csvreader)
+    previous_row = first_row
 
     total_votes = 0
+    total_votes += 1
 
+    candidates = []
+    candidates.append(first_row[2])
     candidates_voted = []
 
     candidates_dict = {}
+    candidates_dict[first_row[2]] = 1
 
     for row in csvreader:
         # Add 1 every row to calculate the total number of votes cast
         total_votes = total_votes + 1
+
         candidates_voted.append(row[2])
+        
+        if (row[2] != previous_row[2]) and (row[2] not in candidates):
+            candidates.append(row[2])
+        previous_row = row
+
         
     for candidate in candidates_voted:
         if candidate not in candidates_dict:
@@ -30,18 +41,14 @@ with open(file_path) as file:
         else:
             candidates_dict[candidate] += 1
 
-    candidates_dict_sorted = sorted(candidates_dict.items(), key=lambda x:x[1], reverse=True)
-    winner = list(sorted(candidates_dict.items(), key=lambda x:x[1], reverse=True)[0])[0]
+    winner = list(sorted(candidates_dict.items(), key=lambda x:x[1],reverse=True)[0])[0]
 
-    print(candidates_dict_sorted)
-'''
 print("Election Results")
 print("-------------------------")
 print(f"Total Votes: {total_votes}")
 print("-------------------------")
-for candidate in candidates_dict_sorted:
-    print(f"{candidate}: {round(candidates_dict_sorted[candidate]/total_votes*100, 5)}% ({candidates_dict_sorted[candidate]})")
+for candidate in candidates:
+    print(f"{candidate}: {round(candidates_dict[candidate]/total_votes*100, 5)}% ({candidates_dict[candidate]})")
 print("-------------------------")
 print(f"Winner: {winner}")
 print("-------------------------")
-'''
