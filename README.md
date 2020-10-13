@@ -76,4 +76,5 @@ Winner: Khan
 
 
 ## <a name="technologies"></a> Technologies
+Project is created with:
 * Python 3.8
