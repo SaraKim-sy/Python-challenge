@@ -3,10 +3,10 @@ import os
 import csv
 
 # Path to collect data from the Resources folder
-file_path = os.path.join('PyBank', 'Resources', 'budget_data.csv')
+file_path = os.path.join('Resources', 'budget_data.csv')
 
 # Path to export a text file with the results
-output_path = os.path.join('PyBank', 'Analysis', 'financial_analysis.txt')
+output_path = os.path.join('Analysis', 'financial_analysis.txt')
 
 # Read in the CSV file
 with open(file_path) as file:

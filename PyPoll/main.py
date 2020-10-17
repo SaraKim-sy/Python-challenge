@@ -3,10 +3,10 @@ import os
 import csv
 
 # Path to collect data from the Resources folder
-file_path = os.path.join('PyPoll', 'Resources', 'election_data.csv')
+file_path = os.path.join('Resources', 'election_data.csv')
 
 # Path to export a text file with the results
-output_path = os.path.join('PyPoll', 'Analysis', 'election_results.txt')
+output_path = os.path.join('Analysis', 'election_results.txt')
 
 # Read in the CSV file
 with open(file_path, 'r') as file:
