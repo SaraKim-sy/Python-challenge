@@ -4,7 +4,6 @@
   * [Introduction](#introduction)
     * [PyBank](#pybank)
     * [PyPoll](#pypoll)
-  * [Getting started](#getting-started)
   * [Output](#output)
   * [Technologies](#technologies)
 
@@ -39,8 +38,6 @@ This project is to create two Python scripts, one for analyzing the financial re
   * The winner of the election based on popular vote
 
 * The script will both print the analysis to the terminal and export a text file with the results.
-
-## <a name="getting-started"></a> Getting started
 
 
 ## <a name="output"></a> Output
